@@ -17,6 +17,11 @@ after_success:
 
 
   #Login into the docker CLI
+  deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
   #Take those images and push them to docker hub
