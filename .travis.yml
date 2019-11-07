@@ -16,7 +16,7 @@ after_success:
   - docker build -t girish527/multi-worker ./worker
 
   #Login into the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+   echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   #Take those images and push them to docker hub
   - docker push girish527/multi-client
