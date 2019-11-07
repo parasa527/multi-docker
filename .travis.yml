@@ -7,7 +7,7 @@ before_install:
   - docker build -t girish527/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true girish527/react-test npm test
+  - docker run girish527/react-test npm test -- --coverage
 
 after_success:
   - docker build -t girish527/multi-client ./client
